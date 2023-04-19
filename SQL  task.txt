@@ -1,0 +1,15 @@
+DECLARE
+   nam VARCHAR(100) := 'hello world';
+   vowels NUMBER := 0;
+   consonants NUMBER := 0;
+BEGIN
+   FOR i IN 1..LENGTH(nam) LOOP
+      IF SUBSTR(nam, i, 1) IN ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U') THEN
+         vowels := vowels + 1;
+      ELSE
+         consonants := consonants + 1;
+      END IF;
+   END LOOP;
+   DBMS_OUTPUT.PUT_LINE('Number of vowels are ' || vowels);
+   DBMS_OUTPUT.PUT_LINE('Number of consonants are ' || consonants);
+END;
